@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/stripe
+    username: postgres
+    password: 1234
+  jpa:
+    hibernate:
+      ddl-auto: create
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type.descriptor.sql.BasicBinder: TRACE
+stripe:
+  endpoint:
+    secret: whsec_c9eb74d008478ba9c2a057bc982922b366d80af74777fd656452222b75c0a773
+  secret:
+    key: sk_test_51QFvOkB3yRxTzxZqVH22tmyrR7QGzR4K1eQMoJkcRsLoVexJ9KzxuqlMcPBjMT8Xyq5VJNtnEY7RTCUUPITFBSeG00LNobvr8s
+
