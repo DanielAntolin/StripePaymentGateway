@@ -33,6 +33,12 @@ public class StripeStrategyCheckoutSessionCompleted implements StripeStrategy {
 
     @Override
     public Event process(Event event) {
+        // Agregar un retraso de 1 segundo (1000 ms)
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         var session = this.desrialize(event);
         return Optional.of(event)
                 .map(giventevent -> paymentRepository.findByPaymentIntentId(session.getPaymentIntent()))
